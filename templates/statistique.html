@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nombres d'Opérations par Espece avec la Moyenne d'âge des Echantillons de l'Espece</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1> Statistique</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Espece</th>
+                <th>Moyenne de l'Espece</th>
+                <th>Nature de l'opération</th>
+                <th>Compteur du nombre d'opérations par nature</th>
+            </tr>
+            <tr><td colspan="4"><hr></td></tr>
+        </thead>
+        <tbody>
+            {% for elem in statistique %}
+            <tr>
+                <td>{{ elem.espece }}</td>
+                <td>{{ elem.avg }}</td>
+                <td>{{ elem.nature }}</td>
+                <td>{{ elem.count }}</td>
+            </tr>
+            <tr><td colspan="4"><hr></td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <footer>
+        <nav>
+            <a href="{{ url_for('accueil') }}">Accueil</a>
+            {% if 'user' in session %}
+                <a href="{{ url_for('logout') }}">Déconnexion</a>
+            {% endif %}
+        </nav>
+    </footer>
+</body>
+</html>

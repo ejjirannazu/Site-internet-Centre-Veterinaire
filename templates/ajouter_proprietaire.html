@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter un Proprietaire</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Entrer les informations correspondant au proprietaire ajouté</h1>
+    <form action="/ajouter_proprietaire" method="post">
+        <label for="nom">Nom *:</label>
+        <input type="text" id="nom" name="nom" required>
+        <br>
+        <br>
+        <label for="prenom">Prenom *:</label>
+        <input type="text" id="prenom" name="prenom" required>
+        <br>
+        <br>
+        <label for="adresse">Adresse *:</label>
+        <input type="text" id="adresse" name="adresse" required>
+        <br>
+        <br>
+        <label for="num_tel">Numéro de telephone *:</label>
+        <input type="text" id="num_tel" name="num_tel" required>
+        <br>
+        <br>
+        <label for="email">Email *:</label>
+        <input type="text" id="email" name="email" required>
+        <br>
+        <br>
+        <label for="num_suivi">Votre numéro de suivi/mot de passe (jusqu'à 5 caractères maximum)*:</label>
+        <input type="text" id="num_suivi" name="num_suivi" required>
+        <br>
+        <br>
+        <input type="submit" value="Valider">
+    </form>
+</body>
+<footer>
+    <nav>
+        <a href="{{ url_for('accueil') }}">Accueil</a></li>
+        {% if 'user' in session %}
+            <a href="{{ url_for('logout') }}">Déconnexion</a></li>
+        {% endif %}
+    </nav>
+</footer>
+</html>

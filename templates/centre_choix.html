@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choisissez un Centre</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Choisissez un Centre</h1>
+    <a href="{{ url_for('centreA')}}">Centre A</a></li>
+    <a href="{{ url_for('centreB')}}">Centre B</a></li>
+    <a href="{{ url_for('centreC')}}">Centre C</a></li>
+    <a href="{{ url_for('centreD')}}">Centre D</a></li>
+
+</body>
+<footer>
+    <nav>
+        <a href="{{ url_for('accueil') }}">Accueil</a></li>
+        {% if 'user' in session %}
+            <a href="{{ url_for('logout') }}">Déconnexion</a></li>
+        {% endif %}
+    </nav>
+</footer>
+</html>

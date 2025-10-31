@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changer le Propriétaire</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Entrer les informations correspondant au changement de propriétaire</h1>
+    <form action="/changer_proprietaire" method="post">
+        <label for="id_animal">Identifiant de l'animal *:</label>
+        <input type="text" id="id_animal" name="id_animal" required>
+        <br>
+        <br>
+        <label for="id_proprio">Identifiant du propriétaire *:</label>
+        <input type="text" id="id_proprio" name="id_proprio" required>
+        <br>
+        <br>
+        <input type="submit" value="Valider">
+    </form>
+    <footer>
+        <nav>
+            <a href="{{ url_for('accueil') }}">Accueil</a></li>
+            {% if 'user' in session %}
+                <a href="{{ url_for('logout') }}">Déconnexion</a></li>
+            {% endif %}
+        </nav>
+    </footer>
+</body>
+</html>

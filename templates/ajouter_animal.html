@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter un Animal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Entrer les informations correspondant à l'animal ajouté</h1>
+    <form action="/ajouter_animal" method="post">
+        <label for="espece">Espece *:</label>
+        <input type="text" id="espece" name="espece" required>
+        <br>
+        <br>
+        <label for="nom">Nom *:</label>
+        <input type="text" id="nom" name="nom" required>
+        <br>
+        <br>
+        <label for="age">Age *:</label>
+        <input type="text" id="age" name="age" required>
+        <br>
+        <br>
+        <label for="sexe">Sexe *:</label>
+        <input type="text" id="sexe" name="sexe" required>
+        <br>
+        <br>
+        <label for="signe_distinct">Signe distinctif (moins de 50 caractères):</label>
+        <input type="text" id="signe_distinct" name="signe_distinct" required>
+        <br>
+        <br>
+        <label for="id_proprietaire">L'identifiant du propriétaire (Pas son nom) *:</label>
+        <input type="text" id="id_proprietaire" name="id_proprietaire" required>
+        <br>
+        <br>
+        <input type="submit" value="Valider">
+    </form>
+</body>
+<footer>
+    <nav>
+        <a href="{{ url_for('accueil') }}">Accueil</a></li>
+        {% if 'user' in session %}
+            <a href="{{ url_for('logout') }}">Déconnexion</a></li>
+        {% endif %}
+    </nav>
+</footer>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Employés du Centre et des Animaux du Centre</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Liste des Employe</h1>
+    {% for elem in employe %}
+    <ul>
+        <li>
+            <strong>Nom:</strong> {{ elem[0] }}<br>
+            <strong>Prenom:</strong>{{ elem[1] }}
+        </li>
+    </ul>
+    {% endfor %}
+</body>
+<body>
+    <h1>Liste des Animaux du Centre</h1>
+    {% for elem in animal %}
+    <ul>
+        <li>
+            <strong>Espece:</strong> {{ elem[0] }}<br>
+            <strong>Nom:</strong> {{ elem[1] }}<br>
+            <strong>Age:</strong> {{ elem[2] }}<br>
+            <strong>Sexe:</strong> {{ elem[3] }}<br>
+            <strong>Signe distinctif:</strong> {{ elem[4] }}<br>
+            <strong>Date d'inscription:</strong>{{ elem[5] }}
+        </li>
+    </ul>
+    {% endfor %}
+</body>
+<footer>
+    <nav>
+        <a href="{{ url_for('accueil') }}">Accueil</a></li>
+        {% if 'user' in session %}
+            <a href="{{ url_for('logout') }}">Déconnexion</a></li>
+        {% endif %}
+    </nav>
+</footer>
+</html>

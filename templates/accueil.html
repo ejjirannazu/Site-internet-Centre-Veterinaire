@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'Accueil</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Bienvenue sur la Page d'Accueil</h1>
+
+    <section>
+        <a href="{{ url_for('centre')}}">Accéder à la Section Centre</a>
+    </section>
+
+    <section>
+        <a href="{{ url_for('connexion_employe')}}">Accéder à la Section Employe</a>
+    </section>
+
+    <section>
+        <a href="{{ url_for('connexion_proprietaire')}}">Accéder à la Section Proprietaire</a>
+    </section>
+</body>
+
+<footer>
+    <nav>
+        <a href="{{ url_for('accueil') }}">Accueil</a></li>
+        {% if 'user' in session %}
+            <a href="{{ url_for('logout') }}">Déconnexion</a></li>
+        {% endif %}
+    </nav>
+</footer>
+</html>

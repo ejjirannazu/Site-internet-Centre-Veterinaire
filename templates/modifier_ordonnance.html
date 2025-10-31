@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier l'Ordonnance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Entrer les informations correspondant a la modification de l'ordonnance</h1>
+    <form action="/modifier_ordonnance" method="post">
+        <label for="id_ordonnance">Identifiant de l'ordonnance *:</label>
+        <input type="text" id="id_ordonnance" name="id_ordonnance" required>
+        <br>
+        <br>
+        <label for="nom_medicament">Nom du médicament *:</label>
+        <input type="text" id="nom_medicament" name="nom_medicament" required>
+        <br>
+        <br>
+        <label for="date_ordonnance">Date de la prescription de l'ordonnance *:</label>
+        <input type="text" id="date_ordonnance" name="date_ordonnance" required>
+        <br>
+        <br>
+        <label for="id_animal">Identifiant de l'animal qui recoit l'ordonnance *:</label>
+        <input type="text" id="id_animal" name="id_animal" required>
+        <br>
+        <br>
+        <input type="submit" value="Valider">
+    </form>
+    <footer>
+        <nav>
+            <a href="{{ url_for('accueil') }}">Accueil</a></li>
+            {% if 'user' in session %}
+                <a href="{{ url_for('logout') }}">Déconnexion</a></li>
+            {% endif %}
+        </nav>
+    </footer>
+</body>
+</html>
